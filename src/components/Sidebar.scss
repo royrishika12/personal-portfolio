@@ -1,0 +1,104 @@
+@import '../styles/variables';
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  background: rgba(5, 10, 25, 0.8);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-right: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem 1.5rem;
+  z-index: 100;
+  box-shadow: 4px 0 30px rgba(0,0,0,0.4);
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.logo-container {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: transparent;
+    background: linear-gradient(135deg, #f9a8d4, #c084fc, #818cf8, #38bdf8);
+    background-size: 200%;
+    animation: logoShimmer 4s ease infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    letter-spacing: -0.02em;
+    margin: 0;
+
+    &::after { display: none; }
+  }
+}
+
+@keyframes logoShimmer {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #94a3b8;
+  padding: 0.75rem 1rem;
+  border-radius: $border-radius-sm;
+  transition: $transition-smooth;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.01em;
+
+  &:hover {
+    color: #ffffff;
+    background: rgba(255,255,255,0.06);
+    padding-left: 1.4rem;
+  }
+
+  &.active {
+    color: #ffffff;
+    background: rgba(56, 189, 248, 0.1);
+    font-weight: 700;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10%;
+      height: 80%;
+      width: 3px;
+      background: linear-gradient(180deg, #38bdf8, #a855f7);
+      border-radius: 4px;
+    }
+  }
+}
+
+.sidebar-footer {
+  margin-top: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.07);
+
+  p {
+    font-size: 0.8rem;
+    color: #475569;
+    margin: 0;
+    font-weight: 500;
+  }
+}

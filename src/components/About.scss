@@ -1,0 +1,29 @@
+@import '../styles/variables';
+
+.about-card {
+  position: relative;
+  overflow: hidden;
+  padding: 2.5rem 2.5rem 2.5rem 3.5rem;
+  max-width: 900px;
+
+  p {
+    color: #cbd5e1;
+    font-size: 1.1rem;
+    line-height: 1.9;
+
+    strong {
+      color: #ffffff;
+      font-weight: 700;
+    }
+  }
+}
+
+.about-accent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 100%;
+  background: $accent-gradient;
+  border-radius: 4px 0 0 4px;
+}

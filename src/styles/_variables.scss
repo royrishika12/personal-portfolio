@@ -1,0 +1,18 @@
+$bg-color: #030712; // deep, rich dark
+$surface-color: rgba(255, 255, 255, 0.05);
+$surface-border: rgba(255, 255, 255, 0.1);
+$surface-hover: rgba(255, 255, 255, 0.08);
+
+$text-primary: #ffffff;
+$text-secondary: #cbd5e1;
+$text-muted: #94a3b8;
+
+$accent-primary: #38bdf8; // Light Blue
+$accent-secondary: #a855f7; // Purple
+$accent-gradient: linear-gradient(135deg, $accent-primary, $accent-secondary);
+
+$glass-blur: 24px;
+$font-main: 'Inter', system-ui, sans-serif;
+$transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$border-radius: 20px;
+$border-radius-sm: 12px;
