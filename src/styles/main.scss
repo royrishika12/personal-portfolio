@@ -178,6 +178,7 @@ strong {
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
+  font-family: inherit;
   transition: $transition-smooth;
   white-space: nowrap;
 
@@ -185,6 +186,28 @@ strong {
     background: rgba(255,255,255,0.1);
     border-color: $accent-primary;
     color: $accent-primary;
+  }
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 2rem;
+  background: transparent;
+  color: #94a3b8;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: $transition-smooth;
+  white-space: nowrap;
+
+  &:hover {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(148, 163, 184, 0.5);
+    color: #e2e8f0;
   }
 }
 

@@ -1,10 +1,14 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FileText, ArrowRight } from 'lucide-react';
+import { Download, ArrowRight, MessageCircle } from 'lucide-react';
+import ContactModal from './ContactModal';
 import './Hero.scss';
 
 const roles = ['Fullstack Developer', 'AIML Developer'];
 
 export default function Hero() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <section id="dashboard" className="section hero">
       {/* Ambient glow blobs */}
@@ -62,11 +66,22 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9 }}
           >
-            <a href="images/resume.pdf" target="_blank" rel="noreferrer" className="btn-primary">
-              <FileText size={18} />
-              View Resume
+            <a
+              href="images/resume.jpeg"
+              download="Rishika_Roy_Resume.jpeg"
+              className="btn-primary"
+            >
+              <Download size={18} />
+              Download Resume
             </a>
-            <a href="#projects" className="btn-secondary">
+            <button
+              className="btn-secondary"
+              onClick={() => setModalOpen(true)}
+            >
+              <MessageCircle size={18} />
+              Send Message
+            </button>
+            <a href="#projects" className="btn-outline">
               See Projects
               <ArrowRight size={18} />
             </a>
@@ -87,6 +102,8 @@ export default function Hero() {
           <div className="image-glow" />
         </motion.div>
       </div>
+
+      <ContactModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </section>
   );
 }
